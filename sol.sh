@@ -33,7 +33,8 @@ cd
 rm -rf solana-snapshot-finder
 systemctl restart solana
 }
-read -p 'Chooso what do you want to do: \n 1. Update version\n 2. Delete ledger and download snapshot' choice
+echo 'Chooso what do you want to do: \n 1. Update version\n 2. Delete ledger and download snapshot'
+read -p  choice
 if [ $choice -eq "1" ]; then
 update
 elif [ $choice -eq "2" ]; then
