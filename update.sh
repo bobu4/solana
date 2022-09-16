@@ -2,6 +2,7 @@
 read -p 'Enter version of solana software, which you want to install: ' version
 solana-install init v$version
 systemctl stop solana
+cd /mnt/md0
 rm -rf solana/ledger
 mkdir solana/ledger 
 sudo apt-get update
