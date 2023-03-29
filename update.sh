@@ -2,7 +2,7 @@
 read -p 'Enter version of solana software, which you want to install: ' version
 solana-install init v$version
 systemctl stop solana
-cd /mnt/md0
+cd /mnt/data
 rm -rf solana/ledger
 mkdir solana/ledger 
 sudo apt-get update
@@ -12,7 +12,7 @@ cd solana-snapshot-finder
 python3 -m venv venv
 source ./venv/bin/activate
 pip3 install -r requirements.txt
-python3 snapshot-finder.py --snapshot_path $HOME/solana/ledger -r http://api.testnet.solana.com
-cd
+python3 snapshot-finder.py --snapshot_path /mnt/data/solana/ledger -r http://api.testnet.solana.com
+cd ..
 rm -rf solana-snapshot-finder
 systemctl restart solana
